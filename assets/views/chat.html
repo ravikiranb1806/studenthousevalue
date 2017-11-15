@@ -1,0 +1,94 @@
+<style type="text/css">
+.buttons_cus_center{    text-align: center;}
+.btop{    border-top: 1px solid #eee;}
+</style>
+<!-- start: PAGE TITLE -->
+<section id="page-title" style="
+    background-image: url('assets/images/profile.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100px;
+    display: table;
+   	width: 100%;
+   	margin:0;
+   	background-position: center center;
+    text-align: center;
+">
+
+
+</section>
+<!-- end: PAGE TITLE -->
+<!-- start: YOUR CONTENT HERE -->
+<!-- end: YOUR CONTENT HERE -->
+<div class="container-fluid container bg-white ng-scope">
+<div class="row buttons-widget">
+<div ng-app="myApp" ng-controller="ChatCtrlFb" class="col-sm-12 col-md-12">
+					<div class="panel panel-transparent">
+						
+						<div class="panel-body">
+							
+							<div class="row">
+								<div class="col-sm-6 col-md-3">
+									<div class="thumbnail">
+										<img src="{{image}}" alt="">
+										
+									</div>
+									
+
+
+									<div class="panel-body">
+										<h3>{{firstname}} {{lastname}}</h3>
+										<div class="space12">
+											<div class="ovl-btn-group">
+												
+													{{type}}
+											
+												<!--<a class="btn btn-primary btn-o hidden-xs" href="javascript:;">
+													{{address}}
+												</a>-->
+
+											</div>
+										</div>
+									</div>
+
+
+								</div>
+								<div class="col-sm-6 col-md-9">
+
+
+
+
+										<!-- /// controller:  'ChatCtrl' -  localtion: assets/js/controllers/chatCtrl.js /// -->
+										<div >
+											<div class="panel panel-white no-radius">
+												<div class="panel-heading border-bottom">
+													<h4 class="panel-title">Chat</h4>
+												</div>
+												<div class="panel-body no-padding">
+													<div class="panel-scroll-auto height-330" id="chatBox" wheel-propagation="false" suppress-scroll-x="true">
+														<div class="chat-thread {{getCharIndivClass(message.user_id)}}" ng-repeat="message in messages"><span>{{ message.content }}</span></div>
+														<!--<clip-chat messages="chat" id-self="selfIdUser" id-other="otherIdUser"></clip-chat>-->
+													</div>
+												</div>
+												<form ng-submit="addMessage();">
+												<input type="text" class="col-xs-10 col-md-10" placeholder="Write your message here." ng-model="message" style="height: 41px;">
+												 <button type="submit" class="btn btn-default col-md-2 col-xs-2 btn-active-oval">Send</button>
+												</form>
+												<!--<chat-submit submit-function="sendMessage" ng-model="chatMessage" scroll-element="#chatBox"></chat-submit>-->
+											</div>
+										</div>
+
+
+
+								</div>
+
+								
+								
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				</div>
+</div>

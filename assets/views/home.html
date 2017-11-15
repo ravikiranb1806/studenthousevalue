@@ -1,0 +1,120 @@
+<!-- start: PAGE TITLE -->
+<style type="text/css">
+	
+	.jumbotron{background-image: url(assets/images/room.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 800px;
+    display: table;
+    width: 100%;
+    margin: 0;
+    padding-top: 220px;
+    background-position: center center;
+    text-align: center;}
+    .features{
+            padding-top: 20px;
+            padding-bottom: 20px;
+    }
+    .footer{
+            background: #2d2c3a !important;
+            padding-top: 20px;
+            padding-bottom: 20px;
+    }
+    .addwhite{
+        color:#fff;
+    }
+</style>
+
+
+<div>
+
+
+
+<!-- end: PAGE TITLE -->
+<!-- start: USER PROFILE -->
+<div ng-controller="ProfileCtrl" class="container-fluid  bg-white" style="margin-top: 21px;">
+	<div class="row">
+	<div class="row">
+		<div class="col-md-12">
+
+
+						
+    <div class="jumbotron">
+         <h1><b>Live . Share . Study</b></h1>
+         <h2 class="addwhite">Find Best Place and Better Roommates While at School</h2>
+         <p ng-if="plink.pflag == 1"><b><a href="{{plink.link}}" class="btn btn-success btn-lg" role="button">Start Here</a></b></p>
+         <p ng-if="plink.pflag == 0"><b><a href="#/app/pages/register" class="btn btn-success btn-lg" role="button">Start Here</a></b></p>
+    </div>
+     <div class="features text-center">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <h3><b><p class="text-info">1</p></b></h3>
+                    </div>
+                    <div class="col-lg-4">
+                        <h3><b><p class="text-info">2</p></b></h3>
+                    </div>
+                    <div class="col-lg-4">
+                        <h3><b><p class="text-info">3</p></b></h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- Features Left -->
+                    <div id="findimg" class="col-lg-4 ">
+                        <img src="assets/images/find-a-room-2.jpg" class="img-rounded" width="240">               
+                        <h2> Find  </h2>
+                        <h4> Look for the rooms and roommates </h4>
+                    </div>
+                    <!-- Features Center -->
+                    <div id="connectimg" class="col-lg-4">
+                        <img src="assets/images/connect-004.jpg" class="img-rounded" width="240">
+                        <h2> Connect </h2>
+                        <h4> Communicate with the Students and Accommodators </h4>
+                    </div>
+                    <!-- Features Right -->
+                    <div id="moveimg" class="col-lg-4">
+                        <img src="assets/images/tenants-moving-in.jpg" class="img-rounded" width="240">
+                        <h2> Move </h2>
+                        <h4> Finalize your decision </h4>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="footer text-center">
+            <!-- Footer Above -->
+            <div class="footer-above">
+                <div class="container-fluid">
+                    <div class="row">
+                        <!-- Footer Above Left -->
+                        <div class="col-lg-6">
+                            <h3 class="addwhite"> Email Us </h3>
+                            <h4 class="addwhite"> studentshouse.app@gmail.com </h4>
+                        </div>
+                        <!-- Footer Above Right -->
+                        <div class="col-lg-6">
+                            <h3 class="addwhite"> About Us </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer Below -->
+            <div class="footer-below">
+                <div class="container">
+                    <div class="row">
+                        <!-- Footer Below Center -->
+                        <div class="col-lg-12"><b>Copyright &copy; 2017 </b></div>
+                    </div>
+                </div>
+            </div>       
+    </div>
+					
+
+				
+				
+			
+		</div>
+	</div>
+</div>
+</div>
+<!-- end: USER PROFILE -->
+</div>

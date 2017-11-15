@@ -1,0 +1,158 @@
+<div class="row col-md-12 pad-top-18">
+							<div class="col-md-4">
+								<div class="user-left">
+									<div class="center">
+									
+										<div flow-init="{singleFile:true}" flow-file-added="imgupload($file)" flow-name="obj.flow" flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]">
+											<div class="user-image">
+												<div class="thumbnail">
+													
+													<img ng-src="{{ProfilePhotoUrl}}" alt="" ng-if="!obj.flow.files.length && !noImage">
+													<img flow-img="obj.flow.files[0]" ng-if="obj.flow.files.length">
+												</div>
+												<div class="user-image-buttons" ng-if="obj.flow.files.length">
+													<span class="btn btn-primary" flow-btn><i class="fa fa-pencil"></i></span>
+													<!-- <span class="btn btn-danger" ng-click="obj.flow.cancel()"> <i class="fa fa-times"></i> </span> -->
+												</div>
+												<div class="user-image-buttons" ng-if="!obj.flow.files.length">
+													<span class="btn btn-primary" flow-btn><i class="fa fa-pencil"></i></span>
+													<!-- <span class="btn btn-danger" ng-if="!noImage" ng-click="removeImage()"><i class="fa fa-times"></i></span> -->
+												</div>
+											</div>
+										</div>
+
+									</div>
+
+
+								</div>
+							</div>
+
+
+
+							<div  ng-app="myApp"  class="col-md-8">
+								<form ng-submit="saveProfile()" class="form-register">
+									<fieldset>
+										
+										<div class="form-group">
+											<label for="form-field-select-1">
+												Role
+											</label>
+											<select selected value="{{profile.type}}" id="type"  ng-model="type" ng-change=typechange();  name="type" class="form-control">
+												<option value="visitor">Visitor</option>
+												<option selected value="mentor">Mentors</option>
+												<option value="startup">Startups</option>
+												<option value="alumini">Alumini</option>
+												<option value="investor">Investors</option>
+												<option value="sponser">Sponsers</option>
+												<option value="organiser">Organisers</option>
+
+											</select>
+										</div>
+
+										<div class="form-group">
+										<input  type="hidden"  ng-model="dbrefid" name="dbrefid"  id="dbrefid" value="{{profile.$id}}">
+										</div>
+
+										<div class="form-group">
+										<input ng-model="email" name="email"  type="hidden"  id="prof_email" value="{{profile.email}}">
+										</div>
+
+										<div class="form-group">
+										<input ng-model="userid" name="userid"  type="hidden"  id="userid" value="{{profile.userid}}">
+										</div>
+
+										<div class="form-group">
+										<input class="form-control" ng-model="image" name="image" type="hidden" value="" id="fbimageurl">
+										</div>
+
+										<div class="form-group">
+											<input value="{{profile.firstname}}" type="text" required="true" class="form-control" ng-model="firstname" name="firstname" id="firstname" placeholder="First Name">
+										</div>
+										<div class="form-group">
+											<input value="{{profile.lastname}}" type="text" required="true" class="form-control" ng-model="lastname" name="lastname" id="lastname"  placeholder="Last Name">
+										</div>
+										<div class="form-group">
+											<input value="{{profile.address}}" type="text"  required="true" class="form-control" name="address" id="address" ng-model="address" placeholder="address">
+										</div>
+
+										<!--<div ng-if="company_en == true" class="form-group">
+											<input value="{{profile.company}}" type="text"  class="form-control" name="company" id="company" ng-model="company" placeholder="Company">
+										</div>
+
+										<div ng-if="designation_en == true" class="form-group">
+											<input value="{{profile.designation}}" type="text"  class="form-control" name="designation" id="designation" ng-model="designation" placeholder="Designation">
+										</div>
+
+										<div ng-if="contact_person_en == true" class="form-group">
+											<input value="{{profile.contact_person}}" type="text" class="form-control" name="contact_person" id="contact_person" ng-model="contact_person" placeholder="Contact person">
+										</div>-->
+
+										<div class="form-group">
+											<input value="{{profile.mobile}}" type="number" class="form-control" ng-model="mobile" id="mobile" name="mobile" placeholder="Contact Number">
+										</div>
+
+										<div class="form-group">
+											<textarea  ng-model="description" name="description" id="description" class="form-control limited" placeholder="Description">{{profile.description}}</textarea>
+										</div>
+
+										<div class="form-group">
+											<label for="form-field-select-1">
+												Industry
+											</label>
+
+											<div class="form-group">
+
+												<select selected id="industry" value="{{profile.industry}}" name="industry" class="form-control" ng-model="industry">
+												 <option ng-repeat="industry in industries" value="{{industry.name}}">{{industry.name}}</option>
+												</select>
+											
+											</div>
+
+
+										</div>
+
+
+
+
+										<div class="form-group">
+											<label for="form-field-select-1">
+												Sub Industry
+											</label>
+											<select selected value="{{profile.subIndustry}}" ng-model="subIndustry" name="subIndustry" id="subIndustry" class="form-control">
+												<option ng-repeat="subindustry in subindustries" value="{{subindustry.name}}">{{subindustry.name}}</option>
+
+
+											</select>
+										</div>
+
+
+
+
+										<div class="form-group">
+											<label for="form-field-select-1">
+												Pain Area
+											</label>
+					<select selected value="{{profile.painarea}}" name="painarea" id="painarea" ng-model="painarea" class="form-control">
+						<option ng-repeat="painarea in painareas" value="{{painarea.name}}">{{painarea.name}}</option>
+
+												
+											</select>
+										</div>
+
+										<div class="form-actions">
+											<a ng-click="goback()" class="text-center pull-left btn btn-wide btn-primary">
+												Cancel <i class="fa fa-ban" aria-hidden="true"></i>
+											</a>
+
+											 <button type="submit" class="btn btn-primary pull-right">
+												Submit <i class="fa fa-arrow-circle-right"></i>
+											</button>
+											
+										</div>
+									</fieldset>
+								</form>
+
+
+
+							</div>
+						</div>
